@@ -1,5 +1,8 @@
 ﻿# SunPass-Test-July
-i have created new project from scracth from memory without any written notes.
+I didnt figured out how to copu several files from ild project in VS code to new projest (tha we have connected to GitHub). So i decided to 
+got thrugh all way again.
+This is what I did today:
+I have created new project from scracth from memory without any written notes.
 1. Greated remote depo in Github
 2. Created local depo.
 3. Installed NPM
