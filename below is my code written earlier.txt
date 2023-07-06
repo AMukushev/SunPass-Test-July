@@ -19,12 +19,17 @@ describe('My SunPass website 20 tests', () => {
     cy.contains('ACCOUNT # 106612385').should('be.visible');
     cy.contains('AIDARBEK MUKUSHEV').should('be.visible');
   });
-  it('Test#4. Should successfully add funds', () => {
+})
+  
+describe('Test#4. Should successfully add funds', () => {
+  // here I am using "beforeEach" 
+  beforeEach(() => { 
      cy.visit('https://www.sunpass.com/vector/account/home/accountLogin.do/');
      cy.fixture('SunPassCredentials.json').as('credentials'); 
-     cy.contains('ACCOUNT # 106612385').should('be.visible');
+    // cy.contains('ACCOUNT # 106612385').should('be.visible');
       });
-  //it('Test#5.Should navigate to Add funds page', () =>{
+      
+      //it('Test#5.Should navigate to Add funds page', () =>{
         // at this step I wanted Cypress to click  atribute href "Add Funds" 
         // but my code didnt see this href
        // cy.visit('https://www.sunpass.com/vector/account/payment/replenishAmountPayment.do'); 
@@ -34,4 +39,3 @@ describe('My SunPass website 20 tests', () => {
        // cy.contains('PAYMENT AMOUNT').should('be.visible');
      // })
     });
-
