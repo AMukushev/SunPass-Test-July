@@ -21,7 +21,7 @@ describe('My SunPass website 20 tests', () => {
   });
   it('Test#4. Should successfully add funds', () => {
      cy.visit('https://www.sunpass.com/vector/account/home/accountLogin.do/');
-     cy.fixture('SunPassCredentials.json').as('credentials'); 
+     cy.fixture("SunPassCredentials.json").as('credentials'); 
      cy.contains('ACCOUNT # 106612385').should('be.visible');
       });
   //it('Test#5.Should navigate to Add funds page', () =>{
