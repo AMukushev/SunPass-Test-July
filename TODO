@@ -1,0 +1,4 @@
+1. Change values in Account Profile
+2. Implement dotenv https://www.npmjs.com/package/dotenv (allows you to hide credentials in github)
+3. Research TestRail
+4. Create an Cypress CLoud Account
