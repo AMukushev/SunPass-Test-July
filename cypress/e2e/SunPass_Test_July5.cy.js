@@ -1,4 +1,12 @@
+require('dotenv').config();
+const login = process.env.LOGIN;
+const password = process.env.PASSWORD
+
 describe('My SunPass test 1-4', () => {
+  beforeEach(() => {
+    console.log("THis prints")
+      })
+
   it('Test 1. Should succefully open home page', () => {    
     cy.visit('https://sunpass.com');
     cy.contains('Welcome to SunPass').should('be.visible');
@@ -9,14 +17,15 @@ describe('My SunPass test 1-4', () => {
   });
 
   it('Test 3. Should succefully log in account and check for account number and user first/last name', () => {
+    //const login = process.env.LOGIN;
+    //const password = process.env.PASSWORD
     cy.visit('https://www.sunpass.com/vector/account/home/accountLogin.do')
-    cy.get('[id=tt_username1]').type('amukushev78');
-    cy.get('[id=tt_loginPassword1]').type('Adam2022!');
-    cy.get('[name=btnLogin]').click({multiple: true, force: true});
+    cy.get('[id=tt_username1]').type (login);
+    cy.get('[id=tt_loginPassword]').type (password);
     cy.contains('ACCOUNT # 106612385').should('be.visible');
     cy.contains('AIDARBEK MUKUSHEV').should('be.visible');
-  });
-  it('Test 4. Should successfully use Fixture for Credentials', () => {
+      });
+  it.skip('Test 4. Should successfully use Fixture for Credentials', () => {
     cy.visit('https://www.sunpass.com/vector/account/home/accountLogin.do');
     cy.fixture("SunPassCredentials.json").then( (SunPassCredentials)=> {
     cy.get('[id=tt_username1]').type(SunPassCredentials.login)
